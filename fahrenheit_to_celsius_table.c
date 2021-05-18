@@ -11,10 +11,13 @@ int main(void)
   float fahr, celsius;
   int lower, upper, step;
 
-  lower = 0;
-  upper = 300;
-  step = 20;
-
+  printf("\nEnter Start of range: ");
+  scanf("%d", &lower);
+  printf("Enter End of range: ");
+  scanf("%d", &upper);
+  printf("Enter Step value: ");
+  scanf("%d", &step);
+  
   fahr = lower;
   printf("\nFahr.  Celsius\n");
   printf("--------------\n");
