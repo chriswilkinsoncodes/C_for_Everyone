@@ -10,13 +10,20 @@ int main(void)
 {
   float fahr, celsius;
   int lower, upper, step;
-  int method;
+  char method;
 
   printf("\nEnter conversion method.");
   printf("\n1. Fahrenheit to Celsius");
-  printf("\n2. Celsius to Fahrenheit");
-  printf("\n(1 or 2): ");
-  scanf("%d", &method);
+  printf("\n2. Celsius to Fahrenheit\n");
+  while(method != '1' && method != '2')
+	{
+		printf("(1 or 2): "); 
+    // https://stackoverflow.com/questions/22380717/how-can-i-read-only-one-character-and-ignore-the-others-if-the-users-types-more
+		int ch;
+		// add space before %c to skip whitepace before the char; e.g. newline
+		scanf(" %c", &method);
+		while((ch = getchar()) != '\n');
+	}
 
   printf("\nEnter Start of range: ");
   scanf("%d", &lower);
@@ -25,7 +32,7 @@ int main(void)
   printf("Enter Step value: ");
   scanf("%d", &step);
  
-  if(method == 1)
+  if(method == '1')
 	{ 
 		fahr = lower;
 		printf("\nFahr.  Celsius\n");
@@ -39,7 +46,7 @@ int main(void)
 		printf("\n");
   }
 
-  if(method == 2)
+  if(method == '2')
 	{ 
 		celsius = lower;
 		printf("\nCelsius    Fahr.\n");
